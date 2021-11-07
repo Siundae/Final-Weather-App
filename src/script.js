@@ -44,10 +44,29 @@ function showTemp(response) {
     Math.round(response.data.wind.speed));
   let currentDate = (document.querySelector("#current-date").innerHTML =
     formatDate(response.data.dt * 1000));
+  let currentIcon = document.querySelector("#icon");
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  currentIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "26862e90492f1d5a7f51cde5dcc0d83b";
-let units = "metric";
-let city = "Auckland";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-axios.get(apiUrl).then(showTemp);
+function search(city) {
+  let apiKey = "26862e90492f1d5a7f51cde5dcc0d83b";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(showTemp);
+}
+
+function submitCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  console.log(cityInput.value);
+  search(cityInput.value);
+}
+
+search("Tallinn");
+
+let form = document.querySelector("#city-search-form");
+form.addEventListener("Submit", submitCity);
