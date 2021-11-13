@@ -56,6 +56,7 @@ function search(city) {
   let apiKey = "26862e90492f1d5a7f51cde5dcc0d83b";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(showTemp);
 }
 
@@ -66,7 +67,7 @@ function submitCity(event) {
   search(cityInput.value);
 }
 
-search("Tallinn");
+search("New York");
 
-let form = document.querySelector("#city-search-form");
-form.addEventListener("Submit", submitCity);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitCity);

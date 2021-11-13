@@ -20,18 +20,20 @@
             <div class="card" style="width: 28rem">
         <div class="card-body">
          
-          <form id="city-search-form">
+          <form id="search-form">
             <div class="row">
               <div class="mb-3 col-6">
                 <input
-                  type="text"
+                  type="search"
                   class="form-control"
                   id="city-input"
                   placeholder="Search for city..."
+                  autocomplete="off"
                 />
               </div>
               <div class="col-2">
-                <button type="submit" class="btn btn-info">Search</button>
+                <input type="submit" value="Search" class="btn btn-info"/>
+                
               </div>
               <div class= "col-4"><button type="button" class="btn btn-primary" id="current-location">My Location</button></div>
             </div>

@@ -1,5 +1,5 @@
-h1 {
-  color: purple;
+small {
+  font-size: 10px;
 }
 .conditions {
   text-transform: capitalize;
