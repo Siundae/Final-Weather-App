@@ -1,6 +1,45 @@
 small {
   font-size: 10px;
 }
+.btn-info {
+  background: #ec6e4c;
+}
+.card-title {
+  font-family: "Permanent Marker", cursive;
+  font-size: 30px;
+}
+.current-day-time {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+}
+.days {
+  font-family: "Staatliches", cursive;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+}
+.forecast {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.list-group-flush {
+  border-top: none;
+}
+.list-group-item {
+  border: none;
+}
 .conditions {
   text-transform: capitalize;
+}
+.today-specs {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  text-align: right;
+}
+.today-temp {
+  font-family: "Staatliches", cursive;
+}
+.today-range {
+  font-family: "Staatliches", cursive;
 }

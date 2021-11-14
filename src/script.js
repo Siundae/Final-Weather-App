@@ -27,6 +27,10 @@ function showTemp(response) {
   console.log(response.data.main.temp_max);
   celsiusTemp = response.data.main.temp;
   console.log(celsiusTemp);
+  celsiusTempMin = response.data.main.temp_min;
+  console.log(celsiusTempMin);
+  celsiusTempMax = response.data.main.temp_max;
+  console.log(celsiusTempMax);
   let currentTemp = (document.querySelector("#current-temp").innerHTML =
     Math.round(response.data.main.temp));
   let currentCity = (document.querySelector("#current-city").innerHTML =
@@ -49,7 +53,7 @@ function showTemp(response) {
   let currentIcon = document.querySelector("#icon");
   currentIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   currentIcon.setAttribute("alt", response.data.weather[0].description);
 }
@@ -70,17 +74,31 @@ function submitCity(event) {
 }
 
 function showFahrenheitTemp(event) {
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let currentTemp = document.querySelector("#current-temp");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let currentTempMin = document.querySelector("#current-min");
+  let fahrenheitTempMin = (celsiusTempMin * 9) / 5 + 32;
+  let currentTempMax = document.querySelector("#current-max");
+  let fahrenheitTempMax = (celsiusTempMax * 9) / 5 + 32;
   currentTemp.innerHTML = Math.round(fahrenheitTemp);
+  currentTempMin.innerHTML = Math.round(fahrenheitTempMin);
+  currentTempMax.innerHTML = Math.round(fahrenheitTempMax);
 }
 
 function showCelsiusTemp(event) {
   let currentTemp = document.querySelector("#current-temp");
+  let currentTempMin = document.querySelector("#current-min");
+  let currentTempMax = document.querySelector("#current-max");
   currentTemp.innerHTML = Math.round(celsiusTemp);
+  currentTempMin.innerHTML = Math.round(celsiusTempMin);
+  currentTempMax.innerHTML = Math.round(celsiusTempMax);
 }
 
 let celsiusTemp = null;
+
+let celsiusTempMin = null;
+
+let celsiusTempMax = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
