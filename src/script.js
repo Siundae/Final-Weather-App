@@ -25,6 +25,8 @@ function formatDate(timestamp) {
 function showTemp(response) {
   console.log(response);
   console.log(response.data.main.temp_max);
+  celsiusTemp = response.data.main.temp;
+  console.log(celsiusTemp);
   let currentTemp = (document.querySelector("#current-temp").innerHTML =
     Math.round(response.data.main.temp));
   let currentCity = (document.querySelector("#current-city").innerHTML =
@@ -67,7 +69,26 @@ function submitCity(event) {
   search(cityInput.value);
 }
 
-search("New York");
+function showFahrenheitTemp(event) {
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
+
+let celsiusButton = document.querySelector("#btnradio1");
+celsiusButton.addEventListener("click", showCelsiusTemp);
+
+let fahrenheitButton = document.querySelector("#btnradio2");
+fahrenheitButton.addEventListener("click", showFahrenheitTemp);
+
+search("New York");
