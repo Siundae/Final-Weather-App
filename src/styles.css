@@ -1,25 +1,55 @@
+a {
+  color: black;
+}
+a:hover {
+  color: #ec6e4c;
+}
 small {
+  font-family: "Inter", sans-serif;
   font-size: 10px;
+}
+
+.btn-group {
+  font-family: "Inter", sans-serif;
 }
 .btn-info {
   background: #ec6e4c;
+  border-color: #ec6e4c;
+}
+.btn-info:hover {
+  background: rgb(243, 62, 12);
+  border-color: #ec6e4c;
+}
+.btn-info:checked {
+  background: rgb(243, 62, 12);
+  border-color: #ec6e4c;
+}
+.card {
+  margin: 0 auto;
 }
 .card-title {
   font-family: "Permanent Marker", cursive;
-  font-size: 30px;
+  font-size: 35px;
+}
+.container {
+  padding: 10px;
 }
 .current-day-time {
   font-family: "Inter", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
+  color: rgb(243, 62, 12);
 }
 .days {
+  color: rgb(243, 62, 12);
   font-family: "Staatliches", cursive;
-  font-size: 32px;
+  font-size: 36px;
   letter-spacing: 1.5px;
+  margin-top: 5px;
 }
 .forecast {
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
+  font-family: "Staatliches", cursive;
+  font-size: 18px;
+
   text-align: center;
 }
 .list-group-flush {
@@ -31,15 +61,25 @@ small {
 .conditions {
   text-transform: capitalize;
 }
+.my-form {
+  font-family: "Inter", sans-serif;
+  font-weight: 250;
+}
 .today-specs {
   font-family: "Inter", sans-serif;
-  font-weight: 200;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 10px;
   text-align: right;
 }
 .today-temp {
   font-family: "Staatliches", cursive;
+  font-size: 44px;
+  text-align: right;
 }
 .today-range {
   font-family: "Staatliches", cursive;
+  font-size: 22px;
+}
+.today-range .today-specs {
+  text-align: center;
 }
