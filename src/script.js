@@ -22,36 +22,59 @@ function formatDate(timestamp) {
   return `${day} | ${hours}:${minutes}`;
 }
 
+// Create function for converting dt to days
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  return days[day];
+}
+
 // Create js template for loop of forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "";
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <li class="list-group-item">
       <div class="row">
-        <div class="col-6 days">${day}</div>
-        <div class="mt-3 col-3 forecast icon">
-          <i class="far fa-snowflake"></i>
-        </div>
+        <div class="col-6 days">${formatDay(forecastDay.dt)}</div>
+        <div class="col-3 forecast icon">
+          <img src="https://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" alt="" width="52" />
+                 </div>
         <div class="col-3 forecast"><span class="forecast-min">        
-          -4°
+          ${Math.round(forecastDay.temp.min)}°
           </span><div class="row">
-            <div class="col-12 forecast">9°</div>
+            <div class="col-12 forecast">${Math.round(
+              forecastDay.temp.max
+            )}°</div>
           </div>
         </div>
       </div>
     </li>
   `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
 }
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "26862e90492f1d5a7f51cde5dcc0d83b";

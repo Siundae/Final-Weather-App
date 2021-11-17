@@ -7,8 +7,13 @@ a:hover {
 small {
   font-family: "Inter", sans-serif;
   font-size: 10px;
+  margin: 8px 0 3px;
+  text-align: left;
 }
-
+.card .list-group {
+  border-bottom: none;
+  border-top: none;
+}
 .btn-group {
   font-family: "Inter", sans-serif;
 }
