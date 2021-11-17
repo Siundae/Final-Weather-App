@@ -53,7 +53,6 @@ small {
 .forecast {
   font-family: "Staatliches", cursive;
   font-size: 18px;
-
   text-align: center;
 }
 .list-group-flush {
@@ -72,7 +71,8 @@ small {
   font-family: "Inter", sans-serif;
   font-weight: 250;
 }
-.today-min {
+.today-min,
+.forecast-min {
   opacity: 0.4;
 }
 .today-specs {
