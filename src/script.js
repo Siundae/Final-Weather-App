@@ -56,7 +56,7 @@ function displayForecast(response) {
         <div class="col-3 forecast icon">
           <img src="https://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png" alt="" width="52" />
+          }@2x.png" alt="" width="55" />
                  </div>
         <div class="col-3 forecast"><span class="forecast-min">        
           ${Math.round(forecastDay.temp.min)}°
