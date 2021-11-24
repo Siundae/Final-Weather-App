@@ -14,8 +14,11 @@ small {
   border-bottom: none;
   border-top: none;
 }
-.btn-group {
-  font-family: "Inter", sans-serif;
+.text-end {
+  font-family: "Staatliches", cursive;
+  font-size: 35px;
+  font-weight: 200;
+  opacity: 0.8;
 }
 .btn-info {
   background: #ec6e4c;

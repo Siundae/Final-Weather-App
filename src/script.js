@@ -139,41 +139,12 @@ function submitCity(event) {
   search(cityInput.value);
 }
 
-function showFahrenheitTemp(event) {
-  let currentTemp = document.querySelector("#current-temp");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let currentTempMin = document.querySelector("#current-min");
-  let fahrenheitTempMin = (celsiusTempMin * 9) / 5 + 32;
-  let currentTempMax = document.querySelector("#current-max");
-  let fahrenheitTempMax = (celsiusTempMax * 9) / 5 + 32;
-  currentTemp.innerHTML = Math.round(fahrenheitTemp);
-  currentTempMin.innerHTML = Math.round(fahrenheitTempMin);
-  currentTempMax.innerHTML = Math.round(fahrenheitTempMax);
-}
-
-function showCelsiusTemp(event) {
-  let currentTemp = document.querySelector("#current-temp");
-  let currentTempMin = document.querySelector("#current-min");
-  let currentTempMax = document.querySelector("#current-max");
-  currentTemp.innerHTML = Math.round(celsiusTemp);
-  currentTempMin.innerHTML = Math.round(celsiusTempMin);
-  currentTempMax.innerHTML = Math.round(celsiusTempMax);
-}
-
-let celsiusTemp = null;
-
 let celsiusTempMin = null;
 
 let celsiusTempMax = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitCity);
-
-let celsiusButton = document.querySelector("#btnradio1");
-celsiusButton.addEventListener("click", showCelsiusTemp);
-
-let fahrenheitButton = document.querySelector("#btnradio2");
-fahrenheitButton.addEventListener("click", showFahrenheitTemp);
 
 search("New York");
 
